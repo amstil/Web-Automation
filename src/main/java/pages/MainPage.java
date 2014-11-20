@@ -63,8 +63,8 @@ public class MainPage extends Page {
     }
 
     public void clickSimpleSeoLink() {
-        simpleSeoLink = getDriver().findElement(By.className("'menu special'")).
-                findElement(By.linkText("Простое SEO-продвижение"));
+        simpleSeoLink = getDriver().findElement(By.className("special")).
+                findElement(By.xpath("a[1]"));
         simpleSeoLink.click();
     }
 
@@ -74,7 +74,16 @@ public class MainPage extends Page {
         malinaForAdminLink.click();
     }
 
-    public void countElementsHeaderMenu() {
-        headerMenu = getDriver().findElements(By.cssSelector("div#TMpanel div[class=menu]"));
+    public List<WebElement> getHeaderMenu() {
+        return headerMenu;
+    }
+
+    public List<WebElement> getHeaderSpecialMenu() {
+        return headerSpecialMenu;
+    }
+
+    public List<WebElement> countElementsHeaderMenu() {
+        headerMenu = getDriver().findElements(By.cssSelector("div#TMpanel div[class=menu] a"));
+        return headerMenu;
     }
 }
