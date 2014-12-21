@@ -13,7 +13,7 @@ public class HeaderMenuTest extends BaseTest {
     @Test
     public void headerNamesCheckTest() {
         MainPage mainPage = new MainPage(getWebDriver());
-        List<WebElement> links = mainPage.getHeaderMenuLinks();
+        List<WebElement> links = mainPage.getHeader().getHeaderMenuLinks();
         System.out.println(links.get(2).getText());
     }
 
