@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -12,7 +14,9 @@ import java.util.List;
 public class Header extends Page {
 
     //Header elements:
-    private By habrLink = By.cssSelector("div#TMpanel div[class='menu'] a:nth-child(1)");
+    @FindBy(css = "div#TMpanel div[class='menu'] a:nth-child(1)")
+    private WebElement habrLink;
+
     private By geektimesLink = By.cssSelector("div#TMpanel div[class='menu'] a:nth-child(2)");
     private By tosterLink = By.xpath("//div[@id='TMpanel']//div[@class='menu']//a[3]");
     private By brainstorageLink = By.xpath("//div[@id='TMpanel']//div[@class='menu']//a[4]");
@@ -25,10 +29,11 @@ public class Header extends Page {
 
     public Header(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
     public void clickHabrLink() {
-        getDriver().findElement(habrLink).click();
+        habrLink.click();
     }
 
     public void clickGeektimesLink() {
