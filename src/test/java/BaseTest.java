@@ -4,7 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 /**
- * Created by Lenovo on 15.11.2014.
+ * Created by Anastasia Shpilevskaya on 15.11.2014.
  */
 public class BaseTest {
     private WebDriver webDriver;
@@ -24,5 +24,4 @@ public class BaseTest {
     public void tearDown() {
         webDriver.close();
     }
-
 }
