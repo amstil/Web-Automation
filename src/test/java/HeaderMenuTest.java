@@ -3,6 +3,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import pages.Header;
 import pages.MainPage;
+import pages.Menu;
 import pages.Page;
 
 import java.util.List;
@@ -17,9 +18,14 @@ public class HeaderMenuTest extends BaseTest {
         MainPage mainPage = new MainPage(getWebDriver());
         List<WebElement> links = mainPage.getHeader().getHeaderMenuLinks();
         System.out.println(links.get(2).getText());
-        //Header habrLinkHeader = new Header(getWebDriver());
         mainPage.getHeader().clickHabrLink();
-
     }
 
+    @Test
+    public void menuHubsTest() {
+        MainPage mainPage = new MainPage(getWebDriver());
+        Menu menu = mainPage.getMenu();
+        menu.checkTitleRazdely();
+        menu.clickHubs();
+    }
 }
