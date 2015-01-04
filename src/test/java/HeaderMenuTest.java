@@ -25,7 +25,6 @@ public class HeaderMenuTest extends BaseTest {
     public void menuHubsTest() {
         MainPage mainPage = new MainPage(getWebDriver());
         Menu menu = mainPage.getMenu();
-        menu.checkTitleRazdely();
         menu.clickHubs();
     }
 }

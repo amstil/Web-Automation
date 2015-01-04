@@ -47,27 +47,27 @@ public class Header extends Page {
     }
 
     public void clickHabrLink() {
-        habrLink.click();
+        clickLink(habrLink);
     }
 
     public void clickGeektimesLink() {
-        geektimesLink.click();
+        clickLink(geektimesLink);
     }
 
     public void clickTosterLink() {
-        tosterLink.click();
+        clickLink(tosterLink);
     }
 
     public void clickBrainstorageLink() {
-        brainstorageLink.click();
+        clickLink(brainstorageLink);
     }
 
     public void clickFreelanceLink() {
-        freelanceLink.click();
+        clickLink(freelanceLink);
     }
 
     public void clickHabrastorageLink() {
-        habrastorageLink.click();
+        clickLink(habrastorageLink);
     }
 
     public List<WebElement> getHeaderMenuLinks() {

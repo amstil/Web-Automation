@@ -36,7 +36,6 @@ public class MainPage extends Page {
     }
 
     public Menu getMenu() {
-        menu.getMenuButton().click();
         return menu;
     }
 }

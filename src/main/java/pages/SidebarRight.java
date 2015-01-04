@@ -11,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class SidebarRight extends Page {
 
-    //Sidebar right menu links Rubriki
     @FindBy(css = "div#layout div.sidebar_right li:nth-child(1) a")
     @CacheLookup
     private WebElement apiLink;
@@ -66,50 +65,50 @@ public class SidebarRight extends Page {
     }
 
     public void clickAPILink() {
-        apiLink.click();
+        clickLink(apiLink);
     }
 
     public void clickAdministrationLink() {
-        administrationLink.click();
+        clickLink(administrationLink);
     }
 
     public void clickDBLink() {
-        dbLink.click();
+        clickLink(dbLink);
     }
 
     public void clickSecurityLink() {
-        securityLink.click();
+        clickLink(securityLink);
     }
 
     public void clickDesignLink() {
-        designLink.click();
+        clickLink(designLink);
     }
 
     public void clickManagementLink() {
-        managementLink.click();
+        clickLink(managementLink);
     }
 
     public void clickProgrammingLink() {
-        programmingLink.click();
+        clickLink(programmingLink);
     }
 
     public void clickSoftwareLink() {
-        softwareLink.click();
+        clickLink(softwareLink);
     }
 
     public void clickTelecommunicationLink() {
-        telecommunicationLink.click();
+        clickLink(telecommunicationLink);
     }
 
     public void clickFrameworksCMSLink() {
-        frameworksCMSLink.click();
+        clickLink(frameworksCMSLink);
     }
 
     public void clickFrontendLink() {
-        frontendLink.click();
+        clickLink(frontendLink);
     }
 
     public void clickDifferentLink() {
-        differentLink.click();
+        clickLink(differentLink);
     }
 }
