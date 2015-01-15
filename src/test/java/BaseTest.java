@@ -13,14 +13,14 @@ public class BaseTest {
         return webDriver;
     }
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
         webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
         webDriver.get("http://www.habrahabr.ru");
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         webDriver.close();
     }

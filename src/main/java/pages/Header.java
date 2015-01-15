@@ -72,10 +72,14 @@ public class Header extends Page {
 
     public List<WebElement> getHeaderMenuLinks() {
         return headerMenu;
-
     }
 
     public List<WebElement> getHeaderSpecialMenuLinks() {
         return headerSpecialMenu;
+    }
+
+    public void clickSpecialMenuByNumber(int number) {
+        clickLink(getHeaderSpecialMenuLinks().get(number - 1));
+        getDriver().switchTo().window((String) getDriver().getWindowHandles().toArray()[1]);
     }
 }

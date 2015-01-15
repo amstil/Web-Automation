@@ -1,0 +1,13 @@
+<suite name="Included Methods">
+    <test name="header menu test">
+        <classes>
+            <class name="HeaderMenuTest">
+                <methods>
+                    <include name="menuHubsTest"/>
+                    <include name="specialMenuTest"/>
+                    <include name="headerNamesCheckTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
