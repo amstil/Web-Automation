@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,6 +40,9 @@ public class Menu extends Page {
     @FindBy(css = "div#menu_tab div.menu a[href*='exchange']")
     private WebElement exchangeAuthors;
 
+    @FindBy(css = "div#layout table.menu td:nth-child(1) span")
+    private WebElement numberOfSearchFounds;
+
     public Menu(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -46,6 +50,10 @@ public class Menu extends Page {
 
     public WebElement getMenuButton() {
         return menuButton;
+    }
+
+    public WebElement getNumberOfSearchFounds() {
+        return numberOfSearchFounds;
     }
 
     public void clickMenuItem(WebElement element) {

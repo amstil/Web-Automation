@@ -1,10 +1,7 @@
 package pages;
 
 import com.google.common.base.Function;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.security.Credentials;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -77,4 +74,13 @@ public class Page {
     public void changeWindow(String windowName) {
         driver.switchTo().window(windowName);
     }
+
+    public void scrollDown() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    public void scrollUp() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, -document.body.scrollHeight);");
+    }
+
 }
