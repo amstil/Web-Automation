@@ -3,8 +3,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.util.concurrent.TimeUnit;
+
 /**
- * Created by Lenovo on 15.11.2014.
+ * Created by Anastasia Shpilevskaya on 15.11.2014.
  */
 public class BaseTest {
     private WebDriver webDriver;
@@ -13,16 +15,16 @@ public class BaseTest {
         return webDriver;
     }
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
         webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
+        //webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         webDriver.get("http://www.habrahabr.ru");
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         webDriver.close();
     }
-
 }
