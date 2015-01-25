@@ -29,4 +29,20 @@ public class Articles extends Page {
         return getListOfArticles().get(number - 1);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Articles articles = (Articles) o;
+        if (listOfArticles != null ? listOfArticles.equals(articles.listOfArticles)
+                : articles.listOfArticles != null) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = listOfArticles.hashCode();
+        return result;
+    }
+
 }

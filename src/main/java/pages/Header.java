@@ -50,6 +50,11 @@ public class Header extends Page {
         clickLink(habrLink);
     }
 
+    public WebElement getHabrLink() {
+        waitVisibleElement(habrLink);
+        return habrLink;
+    }
+
     public void clickGeektimesLink() {
         clickLink(geektimesLink);
     }
@@ -81,5 +86,30 @@ public class Header extends Page {
     public void clickSpecialMenuByNumber(int number) {
         clickLink(getHeaderSpecialMenuLinks().get(number - 1));
         getDriver().switchTo().window((String) getDriver().getWindowHandles().toArray()[1]);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Header header = (Header) o;
+
+        if (geektimesLink != null ? !geektimesLink.equals(header.geektimesLink) : header.geektimesLink != null)
+            return false;
+
+
+        if (!habrLink.equals(header.habrLink)) return false;
+        if (tosterLink != null ? !tosterLink.equals(header.tosterLink) : header.tosterLink != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = habrLink.hashCode();
+        result = 31 * result + (geektimesLink != null ? geektimesLink.hashCode() : 0);
+        result = 31 * result + (tosterLink != null ? tosterLink.hashCode() : 0);
+        return result;
     }
 }

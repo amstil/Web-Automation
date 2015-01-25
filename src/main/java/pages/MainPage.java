@@ -1,9 +1,6 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Anastasia Shpilevskaya on 15.11.2014.
